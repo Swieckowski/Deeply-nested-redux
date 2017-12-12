@@ -1,4 +1,4 @@
-function updateDeepField(state, action) {
+export default function updateDeepField(state, action) {
     return {
         ...state,
         one : {

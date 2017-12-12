@@ -1,13 +1,22 @@
-const deepObject = {
+export const deepObject = {
     one: {
+        oneData:[1,2,3,4],
         two: {
+            twoData:[1,2,3,4],
             three: {
+                threeData:[1,2,3,4],
                 four: {
+                    fourData:[1,2,3,4],
                     five: {
+                        fiveData:[1,2,3,4],
                         six: {
+                            sixData:[1,2,3,4],
                             seven: {
+                                sevenData:[1,2,3,4],
                                 eight: {
+                                    eightData:[1,2,3,4],
                                     nine: {
+                                        nineData:[1,2,3,4],
                                         ten: {
                                             uno: {
                                                 eleven: 11
@@ -26,5 +35,3 @@ const deepObject = {
         }
     }
 }
-
-const flatObject = { one: 1, two: 2 }

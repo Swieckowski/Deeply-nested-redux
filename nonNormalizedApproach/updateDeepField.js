@@ -2,7 +2,7 @@ export default function updateDeepField(state, action) {
     return {
         ...state,
         one : {
-            ...state.first,
+            ...state.one,
             two : {
                 ...state.one.two,
                 three: {

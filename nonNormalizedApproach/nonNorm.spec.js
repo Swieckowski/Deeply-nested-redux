@@ -1,6 +1,6 @@
 // import deepObject from './testObjects'
 import * as reducer from './reducer'
-import {deepObject} from './testObjects'
+import {deepObject, deepObjectNewUNO, deepObjectNewDOS} from './testObjects'
   
 
   describe('Non normalized reducer', () => {
@@ -9,7 +9,6 @@ import {deepObject} from './testObjects'
     })
   
     it('should load the received nested object into state', () => {
-        console.log(reducer.LOAD_NESTED_DATA)
       expect(
         reducer.default(reducer.initialState, {
           type: reducer.LOAD_NESTED_DATA,
@@ -17,5 +16,18 @@ import {deepObject} from './testObjects'
         })
       ).toEqual(deepObject)
     })
-  
+
+    it('should change the value of the eleven key under the UNO property', () => {
+        const action = reducer.deepFieldUnoExampleActionCreator(23)
+      expect(
+        reducer.default(deepObject, action)
+      ).toEqual(deepObjectNewUNO)
+    })
+
+    it('should change the value of the eleven key under the DOS property', () => {
+        const action = reducer.deepFieldDosExampleActionCreator(23)
+      expect(
+        reducer.default(deepObject, action)
+      ).toEqual(deepObjectNewDOS)
+    })
   })

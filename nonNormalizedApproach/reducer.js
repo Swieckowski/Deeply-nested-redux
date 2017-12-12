@@ -1,9 +1,40 @@
 import updateDeepField from './updateDeepField'
 
 export const initialState = {
-    one:{
-        oneData: [],
-        two: {}
+    one: {
+        oneData:[],
+        two: {
+            twoData:[],
+            three: {
+                threeData:[],
+                four: {
+                    fourData:[],
+                    five: {
+                        fiveData:[],
+                        six: {
+                            sixData:[],
+                            seven: {
+                                sevenData:[],
+                                eight: {
+                                    eightData:[],
+                                    nine: {
+                                        nineData:[],
+                                        ten: {
+                                            uno: {
+                                                eleven: 0
+                                            },
+                                            dos: {
+                                                eleven: 0
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -13,8 +44,8 @@ export const NEW_UNO = "NEW UNO"
 export const NEW_DOS = "NEW DOS"
 
 // Action ids
-const UNO = "UNO"
-const DOS = "DOS"
+const uno = "uno"
+const dos = "dos"
 
 //Action Creator
 export const nestedDataLoader = (nestedData) => {
@@ -30,7 +61,7 @@ export const nestedDataLoader = (nestedData) => {
 export const deepFieldUnoExampleActionCreator = (data) => {
     return {
         type: NEW_UNO,
-        id: UNO,
+        id: uno,
         payload: data
     }
 }
@@ -38,7 +69,7 @@ export const deepFieldUnoExampleActionCreator = (data) => {
 export const deepFieldDosExampleActionCreator = (data) => {
     return {
         type: NEW_UNO,
-        id: UNO,
+        id: dos,
         payload: data
     }
 }
@@ -54,7 +85,6 @@ export default function(state = initialState, action) {
     case NEW_DOS:
         return updateDeepField(state, action)
     default: 
-        console.log("YO")
         return state
   }
 }
